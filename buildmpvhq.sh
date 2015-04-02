@@ -19,7 +19,6 @@ echo "Building mpvhq"
 echo "Moving files into new dated folder"
 cd ~/mpvhq/build
 
-cp mpv.com ~/mpvhq.com_`date +%d%b%Y`
-cp mpv.exe ~/mpvhq.exe_`date +%d%b%Y`
-
+cp mpv.com ~/mpv.com
+cp mpv.exe ~/mpv.exe
 
