@@ -2,11 +2,11 @@
 
 echo "Cloning mpvhq from github"
 
-git clone https://github.com/haasn/mpvhq.git
+git clone https://github.com/haasn/mpvhq.git ~/mpvhq
 
 echo "Configuring mpvhq"
 
-cd mpvhq
+cd ~/mpvhq
 
 python ./bootstrap.py
 
@@ -19,6 +19,6 @@ echo "Building mpvhq"
 echo "Moving files into new dated folder"
 cd ~/mpvhq/build
 
-cp mpv.com ~/mpv.com
-cp mpv.exe ~/mpv.exe
+sudo cp mpv.com ~/mpvhq-win64/mpv.com
+sudo cp mpv.exe ~/mpvhq-win64/mpv.exe
 
