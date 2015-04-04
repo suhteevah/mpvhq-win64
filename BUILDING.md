@@ -1,3 +1,37 @@
+Compiling for Windows
+=====================
+
+Compiling for Windows is supported with MinGW-w64. This can be used to produce
+both 32-bit and 64-bit executables, and it works for building on Windows and
+cross-compiling from Linux and Cygwin. MinGW-w64 is available from:
+http://mingw-w64.sourceforge.net.
+
+While building a complete MinGW-w64 toolchain yourself is possible, there are a
+few build environments and scripts to help ease the process, such as MSYS2 and
+MXE. Note that MinGW environments included in Linux distributions are often
+broken, outdated and useless, and usually don't use MinGW-w64.
+
+**Warning**: the original MinGW (http://www.mingw.org) is unsupported.
+
+Cross-compilation
+=================
+
+When cross-compiling, you have to run mpv's configure with these arguments:
+
+```bash
+DEST_OS=win32 TARGET=i686-w64-mingw32 ./waf configure
+```
+
+[MXE](http://mxe.cc) makes it very easy to bootstrap a complete MingGW-w64
+environment from a Linux machine. See a working example below.
+
+Alternatively, you can try [mingw-w64-cmake](https://github.com/lachs0r/mingw-w64-cmake),
+which bootstraps a MinGW-w64 environment and builds mpv and dependencies.
+
+Example with MXE
+----------------
+
+```bash
 # Before starting, make sure you install MXE prerequisites. MXE will download
 # and build all target dependencies, but no host dependencies. For example,
 # you need a working compiler, or MXE can't build the crosscompiler.
@@ -50,3 +84,4 @@ DEST_OS=win32 TARGET=i686-w64-mingw32.static ./waf configure
 # Or, if 64 bit version,
 # DEST_OS=win32 TARGET=x86_64-w64-mingw32.static ./waf configure
 ./waf build
+```
