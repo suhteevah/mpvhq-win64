@@ -2,7 +2,7 @@
 mpvhq built on arch for win64
 
 Includes:
-youtube-dl (2015.03.28)
+youtube-dl (2015.04.03)
 librtmp
 lcms
 libdca
