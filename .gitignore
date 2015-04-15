@@ -1,4 +1,5 @@
 mpv.conf
+input.conf
 #################
 ## Eclipse
 #################
@@ -215,3 +216,4 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+scripts/stats.lua
