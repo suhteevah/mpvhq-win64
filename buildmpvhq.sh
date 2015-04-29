@@ -2,23 +2,30 @@
 
 echo "Cloning mpvhq from github"
 
-git clone https://github.com/haasn/mpvhq.git ~/mpvhq
+cd /home/sativa/mpvhq
+
+git pull
 
 echo "Configuring mpvhq"
 
-cd ~/mpvhq
-
 python ./bootstrap.py
 
+export PATH=/opt/mxe/usr/bin/:$PATH
 DEST_OS=win32 TARGET=x86_64-w64-mingw32.static ./waf configure
 
 echo "Building mpvhq"
 
 ./waf build
 
-echo "Moving files into new dated folder"
-cd ~/mpvhq/build
+echo "Moving files into home"
+cd /home/sativa/mpvhq/build
 
-sudo cp mpv.com ~/mpvhq-win64/mpv.com
-sudo cp mpv.exe ~/mpvhq-win64/mpv.exe
+cp mpv.com /home/sativa/mpv.com
+cp mpv.exe /home/sativa/mpv.exe
 
+cd /home/sativa/
+
+upx mpv.exe
+upx mpv.com
+
+echo "Finished"
