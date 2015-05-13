@@ -11,7 +11,7 @@ echo "Configuring mpvhq"
 python ./bootstrap.py
 
 export PATH=/opt/mxe/usr/bin/:$PATH
-DEST_OS=win32 TARGET=x86_64-w64-mingw32.static ./waf configure
+DEST_OS=win32 TARGET=x86_64-w64-mingw32.static ./waf configure --enable-vapoursynth
 
 echo "Building mpvhq"
 
